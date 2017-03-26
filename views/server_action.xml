@@ -1,0 +1,11 @@
+<odoo>
+	<data>
+
+		<record model="ir.actions.act_server" id="action_send_sms">
+			<field name="name">Send SMS</field>
+			<field name="res_model"></field>
+			
+		</record>
+		
+	</data>
+</odoo>
