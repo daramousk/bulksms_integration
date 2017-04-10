@@ -23,7 +23,7 @@
     # Check https://github.com/odoo/odoo/blob/master/odoo/addons/base/module/module_data.xml
     # for the full list
     'category': 'Uncategorized',
-    'version': '0.1',
+    'version': '1.0',
 
     # any module necessary for this one to work correctly
     'depends': ['base'],
@@ -33,5 +33,7 @@
         # 'security/ir.model.access.csv',
         'views/res_partner.xml',
     ],
-   'application':True
+    'price': 179.00,
+    'currency': 'EUR',
+    'application': True
 }

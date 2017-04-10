@@ -25,17 +25,22 @@
 		<record model="ir.actions.act_window" id="action_send_sms">
 			<field name="name">Send SMS</field>
 			<field name="res_model">sms.message.composer</field>
-			<field name="view_mode">form</field>
-			<field name="current">new</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="view_id" ref="sms_message_composer" />
+			<field name="target">new</field>
 		</record>
+		<!-- TODO action does not work, why? -->
 
 		<record model="ir.ui.view" id="button_res_partner_form">
 			<field name="name">Send SMS button res_partner_form</field>
 			<field name="model">res.partner</field>
 			<field name="inherit_id" ref="base.view_partner_form" />
 			<field name="arch" type="xml">
-				<xpath expr="//field[@name='mobile']" position="after">
-					<button name="send_sms" type="action" action="action_send_sms"></button>
+				<xpath expr="//div[@class='oe_button_box']" position="inside">
+					<button name="send_sms" class="oe_stat_button" icon="fa-pencil-square-o" type="action" action="%(action_send_sms)">
+						<span class="o_stat_text">Send SMS</span>
+					</button>
 				</xpath>
 			</field>
 		</record>
