@@ -1,0 +1,36 @@
+<odoo>
+	<data>
+
+		<record id="sms_settings" model="ir.ui.view">
+			<field name="name">SMS Settings</field>
+			<field name="model">sms.settings</field>
+			<field name="arch" type="xml">
+				<form string="SMS Settings" class="oe_form_configuration">
+					<header>
+						<button string="Apply" type="object" name="execute" class="oe_highlight" />
+						or
+						<button string="Cancel" type="object" name="cancel" class="oe_link" />
+					</header>
+					<group string="Fill in your bulksms.com details:">
+						<field name="username" />
+						<field name="password" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+
+		<record model="ir.actions.act_window" id="show_settings">
+			<field name="name">Settings</field>
+			<field name="res_model">sms.settings</field>
+			<field name="view_mode">form</field>
+			<field name="target">inline</field>
+			<field name="view_id" ref="sms_settings" />
+		</record>
+
+
+		<menuitem id="menu_sms_top" name="SMS" parent="base.menu_custom" />
+		<menuitem id="menu_sms_settings" name="Settings" parent="menu_sms_top" action="show_settings" />
+
+	</data>
+</odoo>

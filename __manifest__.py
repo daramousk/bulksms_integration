@@ -26,12 +26,15 @@
     'version': '1.0',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'base_action_rule'],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
         'views/res_partner.xml',
+        'views/settings.xml',
+        #'data/server_action.xml',
+        
     ],
     'price': 179.00,
     'currency': 'EUR',
